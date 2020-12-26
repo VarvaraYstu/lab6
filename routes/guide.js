@@ -16,15 +16,14 @@ router.post('/', (req, res) => {
 });
 
 //Метод изменения элемента
-router.patch('/:id',(req, res) => {
-    const { id } = req.params;
-    const { firstName, lastName } = req.body;
-
-    const user = users.find((user) => user.id === id);
-
-    if(firstName) user.firstName = firstName;
-    if(lastName) user.lastName = lastName;
-
+router.put('/:id',(req, res) => {
+    const user = req.body;
+    const id = user.id;
+    for (let el in users){
+        if((users[el].id) == id){
+            users[el] = user;
+        }
+    }
     res.send(`User with the id ${id} was updated`);
 
 });
