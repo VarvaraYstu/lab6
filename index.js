@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/guide', guideRoutes);
 
-app.get('/', (req, res)=>res.send('Hello from Homepage.'));
+app.get('/', (req, res)=>res.send('Spravochnik studentov.'));
 
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
